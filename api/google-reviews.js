@@ -1,8 +1,12 @@
-export default function handler(req) {
-  return Response.json({
+export const config = {
+  runtime: "nodejs"
+};
+
+export default function handler(req, res) {
+  return res.status(200).json({
     status: "OK",
     message: "API working",
-    runtime: "vercel-edge-fixed",
+    runtime: "nodejs-fixed",
     timestamp: Date.now()
   });
 }
