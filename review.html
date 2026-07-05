@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leave a Review</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    .box {
+      background: #f5f5f5;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Leave a Review</h2>
+
+  <textarea id="input" placeholder="Write your rough review..."></textarea>
+
+  <button onclick="generate()">Improve Review</button>
+
+  <div class="box" id="output"></div>
+
+  <button id="copyBtn" style="display:none;" onclick="copyText()">Copy Review</button>
+
+  <button id="googleBtn" style="display:none;" onclick="goGoogle()">Leave on Google</button>
+
+<script>
+async function generate() {
+  const text = document.getElementById("input").value;
+
+  const res = await fetch("/api/google-reviews", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text })
+  });
+
+  const data = await res.json();
+
+  document.getElementById("output").innerText = data.improved;
+
+  document.getElementById("copyBtn").style.display = "block";
+  document.getElementById("googleBtn").style.display = "block";
+
+  window.latestReview = data.improved;
+}
+
+function copyText() {
+  navigator.clipboard.writeText(window.latestReview);
+  alert("Copied!");
+}
+
+function goGoogle() {
+  window.location.href =
+    "https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID";
+}
+</script>
+
+</body>
+</html>
