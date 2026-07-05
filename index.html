@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simmons Family Dentistry - AI Review Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+    <div class="card">
+
+        <h1>🦷 Simmons Family Dentistry</h1>
+
+        <p class="subtext">
+        Share your experience with us. Your feedback helps us continue providing gentle, personalized care.
+        </p>
+
+        <div class="section">
+            <label>Overall Rating</label>
+
+            <div class="stars" id="starRating">
+                <span data-value="1">☆</span>
+                <span data-value="2">☆</span>
+                <span data-value="3">☆</span>
+                <span data-value="4">☆</span>
+                <span data-value="5">☆</span>
+            </div>
+        </div>
+
+        <div class="section">
+             <label>What service did you receive?</label>
+<select id="service">
+            <option>Dental Cleaning</option>
+            <option>Exam</option>
+            <option>Filling</option>
+            <option>Whitening</option>
+            <option>Emergency Visit</option>
+            <option>New Patient Exam</option>
+            <option>Invisalign Consultation</option>
+            <option>Other</option>
+</select>
+        </div>
+        <div class="section">
+            <label>What stood out about your visit?</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="Gentle care"> Gentle care</label>
+                <label><input type="checkbox" value="Clean office"> Clean office</label>
+                <label><input type="checkbox" value="Clear explanations"> Clear explanations</label>
+                <label><input type="checkbox" value="Easy scheduling"> Easy scheduling</label>
+                <label><input type="checkbox" value="Comfortable atmosphere"> Comfortable atmosphere</label>
+                <label><input type="checkbox" value="Professional team"> Professional team</label>
+                <label><input type="checkbox" value="Short wait time"> Short wait time</label>
+                <label><input type="checkbox" value="Modern technology"> Modern technology</label>
+                <label><input type="checkbox" value="Highly recommend"> Highly recommend</label>
+            </div>
+        </div>
+       <div class="section">
+            <label>Tell us about your visit</label>
+<textarea
+    id="comments"
+    placeholder="Tell us about your visit. What made your experience memorable?"></textarea>
+</textarea>            
+     </div>
+        <button class="btn" id="generateBtn">
+        ✨ Help Me Write My Review
+        </button>
+        <div id="reviewContainer" class="section" style="display:none;">
+
+    <label>Suggested Review</label>
+
+    <textarea
+        id="generatedReview"
+        rows="8"
+        readonly
+    ></textarea>
+
+    <button class="btn" id="copyBtn">
+        📋 Copy Review
+    </button>
+<button class="btn" id="googleReviewBtn">
+    ⭐ Leave a Google Review
+</button>
+<p class="subtext">
+Thank you for supporting our practice! Your feedback helps other patients find quality dental care.
+</p>
+</div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
