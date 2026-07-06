@@ -1,150 +1,187 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+/* -----------------------------
+   BASE RESET
+----------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
 
-    background:#eef5fb;
+/* -----------------------------
+   PAGE BACKGROUND (CLEAN CLINIC STYLE)
+----------------------------- */
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    min-height:100vh;
-
+body {
+    background: #f5f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.card{
 
-    background:white;
+/* -----------------------------
+   MAIN CONTAINER CARD
+----------------------------- */
 
-    width:500px;
-
-    padding:40px;
-
-    border-radius:18px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
-
-    text-align:center;
-
+.card {
+    background: #ffffff;
+    width: 540px;
+    padding: 45px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    text-align: left;
+    border: 1px solid #e6eef5;
 }
 
-h1{
 
-    color:#0d4f8b;
+/* -----------------------------
+   HEADER STYLE (CLINIC FEEL)
+----------------------------- */
 
-    margin-bottom:10px;
-
+h1 {
+    font-size: 24px;
+    color: #0b4a6f;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
-h2{
-
-    margin-bottom:20px;
-
-    color:#444;
-
+.subtext {
+    font-size: 14px;
+    color: #5f6b76;
+    margin-bottom: 25px;
+    line-height: 1.6;
 }
 
-p{
 
-    color:#666;
+/* -----------------------------
+   SECTIONS (SPACED LIKE REAL CLINIC FORMS)
+----------------------------- */
 
-    line-height:1.6;
-
-}
-.section{
-
-    margin-top:35px;
-
-    text-align:left;
-
+.section {
+    margin-bottom: 26px;
 }
 
-label{
-
-    font-weight:bold;
-
-    display:block;
-
-    margin-bottom:12px;
-
-    color:#333;
-
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
 }
 
-.stars{
 
-    font-size:38px;
+/* -----------------------------
+   STAR RATING (CLEAN & SUBTLE)
+----------------------------- */
 
-    color:#f4b400;
-
-    cursor:pointer;
-
-}
-.subtext{
-    color:#666;
-    margin-top:10px;
-    margin-bottom:30px;
-    line-height:1.5;
+.stars {
+    font-size: 34px;
+    color: #c9d6df;
+    cursor: pointer;
 }
 
-select{
-    width:100%;
-    padding:12px;
-    border-radius:10px;
-    border:1px solid #ddd;
-    margin-top:8px;
+.stars span {
+    margin-right: 6px;
+    transition: 0.2s ease;
 }
 
-.checkbox-group{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-top:10px;
-    color:#444;
+.stars span:hover {
+    transform: scale(1.15);
+    color: #f4b400;
 }
 
-textarea{
-    width:100%;
-    height:100px;
-    padding:12px;
-    border-radius:10px;
-    border:1px solid #ddd;
-    margin-top:8px;
-    resize:none;
+.stars span.active {
+    color: #f4b400;
 }
 
-.btn{
-    margin-top:25px;
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    background:#4f7c8a;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.2s ease;
+
+/* -----------------------------
+   INPUT FIELDS (CLINIC STYLE)
+----------------------------- */
+
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d9e2ec;
+    font-size: 14px;
+    margin-top: 6px;
+    outline: none;
+    background: #fff;
 }
 
-.btn:hover{
-    background:#3f6773;
-}
-.stars span{
-    margin-right:5px;
-    transition:0.2s ease;
+select:focus,
+textarea:focus {
+    border-color: #2b7bbb;
+    box-shadow: 0 0 0 3px rgba(43, 123, 187, 0.15);
 }
 
-.stars span.active{
-    color:#f4b400;
+
+/* -----------------------------
+   TEXTAREA
+----------------------------- */
+
+textarea {
+    height: 110px;
+    resize: none;
 }
 
-.stars span:hover{
-    transform:scale(1.1);
+
+/* -----------------------------
+   CHECKBOX LIST (CLEAN STACKED STYLE)
+----------------------------- */
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #34495e;
+}
+
+
+/* -----------------------------
+   BUTTON (DENTAL OFFICE STYLE BLUE)
+----------------------------- */
+
+.btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #2b7bbb;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background: #1f5f93;
+}
+
+
+/* -----------------------------
+   REVIEW OUTPUT BOX
+----------------------------- */
+
+#reviewContainer {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 10px;
+    background: #f9fbfd;
+    border: 1px solid #e3ecf3;
+}
+
+#generatedReview {
+    background: #fff;
+    border: 1px solid #d9e2ec;
 }
