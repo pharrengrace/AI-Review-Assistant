@@ -32,7 +32,7 @@ body {
     background: #ffffff;
     width: 600px;
     max-width: 100%;
-    padding: 55px 50px;
+    padding: 45px 45px;
     border-radius: 14px;
     border: 1px solid #e6eef5;
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
@@ -44,7 +44,7 @@ body {
 ----------------------------- */
 
 .header-image {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     border-radius: 12px;
     overflow: hidden;
 }
@@ -58,7 +58,7 @@ body {
 
 
 /* -----------------------------
-   HEADER
+   HEADER TEXT
 ----------------------------- */
 
 h1 {
@@ -69,6 +69,7 @@ h1 {
     margin-bottom: 12px;
 }
 
+
 .welcome {
     text-align: center;
     color: #2b7bbb;
@@ -77,13 +78,14 @@ h1 {
     margin-bottom: 16px;
 }
 
+
 .subtext {
     text-align: center;
     color: #5f6b76;
     font-size: 15px;
     line-height: 1.8;
     max-width: 470px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 35px auto;
 }
 
 
@@ -92,12 +94,16 @@ h1 {
 ----------------------------- */
 
 .google-badge {
+
     background: #f7fbff;
     border: 1px solid #dbe8f4;
     border-radius: 10px;
+
     padding: 16px;
-    margin: 35px 0;
+    margin: 25px 0;
+
     text-align: center;
+
     font-size: 15px;
     font-weight: 600;
     color: #2c3e50;
@@ -109,14 +115,18 @@ h1 {
 ----------------------------- */
 
 .section {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
+
 
 label {
     display: block;
+
     font-size: 15px;
     font-weight: 600;
+
     color: #2c3e50;
+
     margin-bottom: 12px;
 }
 
@@ -126,25 +136,40 @@ label {
 ----------------------------- */
 
 .stars {
+
     display: flex;
     justify-content: center;
+
     gap: 6px;
+
     font-size: 40px;
+
     cursor: pointer;
 }
 
+
 .stars span {
-    color: #f4b400;
+
+    color: #c9d6df;
+
     transition: all .2s ease;
+
 }
+
 
 .stars span:hover {
+
     transform: scale(1.15);
+
 }
 
+
 .stars span.active {
+
     color: #f4b400;
+
 }
+
 
 
 /* -----------------------------
@@ -153,169 +178,424 @@ label {
 
 select,
 textarea {
+
     width: 100%;
+
     padding: 14px;
+
     border-radius: 10px;
+
     border: 1px solid #d9e2ec;
+
     font-size: 14px;
+
     background: white;
+
     outline: none;
+
     transition: .2s;
+
 }
+
 
 select:focus,
 textarea:focus {
+
     border-color: #2b7bbb;
+
     box-shadow: 0 0 0 3px rgba(43,123,187,.15);
+
 }
 
+
 textarea {
+
     height: 140px;
+
     resize: vertical;
+
     line-height: 1.5;
+
 }
+
 
 
 /* -----------------------------
    CHECKBOXES
 ----------------------------- */
 
+
 .checkbox-group {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
+
     font-size: 14px;
+
     color: #34495e;
+
 }
 
+
 .checkbox-group label {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     margin-bottom: 0;
+
     font-weight: normal;
+
 }
+
 
 
 /* -----------------------------
    BUTTONS
 ----------------------------- */
 
+
 .btn {
+
     width: 100%;
+
     padding: 15px;
+
     margin-top: 24px;
+
     border: none;
+
     border-radius: 10px;
+
     background: #2b7bbb;
+
     color: white;
+
     font-size: 16px;
+
     font-weight: 600;
+
     cursor: pointer;
+
     transition: .2s;
+
 }
 
+
 .btn:hover {
+
     background: #1f5f93;
+
     transform: translateY(-1px);
+
 }
+
+
+.btn:disabled {
+
+    opacity: .7;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+
+/* Google Review Button */
+
+#googleReviewBtn {
+
+    background: #0b4a6f;
+
+}
+
+
+#googleReviewBtn:hover {
+
+    background: #083852;
+
+}
+
 
 
 /* -----------------------------
    AI REVIEW OUTPUT
 ----------------------------- */
 
+
 #reviewContainer {
+
     margin-top: 40px;
+
     padding: 25px;
+
     background: #f9fbfd;
+
     border: 1px solid #e3ecf3;
+
     border-radius: 12px;
+
 }
 
+
 #generatedReview {
+
     background: white;
+
     border: 1px solid #d9e2ec;
+
 }
+
 
 
 /* -----------------------------
    REVIEW NOTE
 ----------------------------- */
 
+
 .review-note {
+
     margin-top: 24px;
+
     text-align: center;
+
     color: #5f6b76;
+
     font-size: 14px;
+
     line-height: 1.7;
-}
-
-
-/* -----------------------------
-   MOBILE
------------------------------ */
-
-@media (max-width: 768px) {
-
-    body {
-        padding: 20px;
-    }
-
-    .card {
-        padding: 30px 25px;
-    }
-
-    .header-image img {
-        height: 180px;
-    }
-
-    h1 {
-        font-size: 26px;
-    }
-
-    .welcome {
-        font-size: 17px;
-    }
-
-    .subtext {
-        font-size: 14px;
-    }
-
-    .stars {
-        font-size: 34px;
-    }
-}
-/* -----------------------------
-   FADE IN ANIMATION
------------------------------ */
-
-.fade-in {
-    animation: fadeIn .5s ease;
-}
-
-@keyframes fadeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 
 }
+
+
+
 /* -----------------------------
    COPY SUCCESS MESSAGE
 ----------------------------- */
 
+
 .copy-message {
+
     display: none;
+
     margin-top: 12px;
+
     text-align: center;
+
     color: #2e7d32;
+
     font-size: 14px;
+
     font-weight: 600;
+
+}
+
+
+
+/* -----------------------------
+   FADE ANIMATION
+----------------------------- */
+
+
+.fade-in {
+
+    animation: fadeIn .5s ease;
+
+}
+
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* -----------------------------
+   MOBILE OPTIMIZATION
+----------------------------- */
+
+
+@media (max-width: 600px) {
+
+
+    body {
+
+        padding: 15px;
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .card {
+
+        width: 100%;
+
+        padding: 30px 22px;
+
+        border-radius: 12px;
+
+    }
+
+
+
+    .header-image {
+
+        margin-bottom: 22px;
+
+    }
+
+
+
+    .header-image img {
+
+        height: 150px;
+
+    }
+
+
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+
+
+    .welcome {
+
+        font-size: 16px;
+
+    }
+
+
+
+    .subtext {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+
+    }
+
+
+
+    .google-badge {
+
+        font-size: 14px;
+
+        padding: 14px;
+
+    }
+
+
+
+    .section {
+
+        margin-bottom: 24px;
+
+    }
+
+
+
+    label {
+
+        font-size: 14px;
+
+    }
+
+
+
+    .stars {
+
+        font-size: 34px;
+
+    }
+
+
+
+    select {
+
+        height: 48px;
+
+        font-size: 15px;
+
+    }
+
+
+
+    textarea {
+
+        height: 120px;
+
+        font-size: 15px;
+
+    }
+
+
+
+    .btn {
+
+        padding: 14px;
+
+        font-size: 15px;
+
+    }
+
+
+
+    #reviewContainer {
+
+        padding: 18px;
+
+        margin-top: 30px;
+
+    }
+
+
+
+    #generatedReview {
+
+        height: 160px;
+
+    }
+
+
+
+    .review-note {
+
+        font-size: 13px;
+
+    }
+
 }
