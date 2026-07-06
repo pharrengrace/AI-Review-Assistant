@@ -8,14 +8,21 @@ const stars = document.querySelectorAll("#starRating span");
 
 stars.forEach((star, index) => {
     star.addEventListener("click", () => {
+
         rating = index + 1;
 
         stars.forEach((s, i) => {
-            s.textContent = i < rating ? "★" : "☆";
+            if (i < rating) {
+                s.classList.add("active");
+                s.textContent = "★";
+            } else {
+                s.classList.remove("active");
+                s.textContent = "☆";
+            }
         });
+
     });
 });
-
 
 // -----------------------------
 // GENERATE REVIEW + AI REQUEST

@@ -80,21 +80,23 @@ label {
 
 .stars {
     font-size: 34px;
-    color: #c9d6df;
     cursor: pointer;
 }
 
 .stars span {
     margin-right: 6px;
+    color: #c9d6df; /* default gray */
     transition: 0.2s ease;
 }
 
-.stars span:hover {
-    transform: scale(1.15);
-    color: #f4b400;
+/* active (selected stars) */
+.stars span.active {
+    color: #f4b400; /* Google yellow */
 }
 
-.stars span.active {
+/* hover effect */
+.stars span:hover {
+    transform: scale(1.2);
     color: #f4b400;
 }
 

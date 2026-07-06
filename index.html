@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simmons Family Dentistry - AI Review Assistant</title>
+    <title>Simmons Family Dentistry - Leave a Review</title>
 
-    <link rel="stylesheet" href="style.css?v=999">
+    <link rel="stylesheet" href="style.css?v=1000">
 </head>
 
 <body>
-    <div class="container">
+
+<div class="container">
 
     <div class="card">
 
+        <!-- HEADER -->
         <h1>🦷 Simmons Family Dentistry</h1>
 
         <p class="subtext">
-        Share your experience with us. Your feedback helps us continue providing gentle, personalized care.
+            We appreciate your visit. Your feedback helps us continue providing gentle, high-quality dental care.
         </p>
 
+        <!-- STEPS -->
+        <div class="section steps">
+            <div>1. Write experience</div>
+            <div>2. Improve with AI</div>
+            <div>3. Post to Google</div>
+        </div>
+
+
+        <!-- RATING -->
         <div class="section">
             <label>Overall Rating</label>
 
@@ -31,21 +42,28 @@
             </div>
         </div>
 
+
+        <!-- SERVICE -->
         <div class="section">
-             <label>What service did you receive?</label>
-<select id="service">
-            <option>Dental Cleaning</option>
-            <option>Exam</option>
-            <option>Filling</option>
-            <option>Whitening</option>
-            <option>Emergency Visit</option>
-            <option>New Patient Exam</option>
-            <option>Invisalign Consultation</option>
-            <option>Other</option>
-</select>
+            <label>What service did you receive?</label>
+
+            <select id="service">
+                <option>Dental Cleaning</option>
+                <option>Exam</option>
+                <option>Filling</option>
+                <option>Whitening</option>
+                <option>Emergency Visit</option>
+                <option>New Patient Exam</option>
+                <option>Invisalign Consultation</option>
+                <option>Other</option>
+            </select>
         </div>
+
+
+        <!-- FEEDBACK CHECKBOXES -->
         <div class="section">
             <label>What stood out about your visit?</label>
+
             <div class="checkbox-group">
                 <label><input type="checkbox" value="Gentle care"> Gentle care</label>
                 <label><input type="checkbox" value="Clean office"> Clean office</label>
@@ -54,42 +72,57 @@
                 <label><input type="checkbox" value="Comfortable atmosphere"> Comfortable atmosphere</label>
                 <label><input type="checkbox" value="Professional team"> Professional team</label>
                 <label><input type="checkbox" value="Short wait time"> Short wait time</label>
-                <label><input type="checkbox" value="Modern technology"> Modern technology</label>
-                <label><input type="checkbox" value="Highly recommend"> Highly recommend</label>
             </div>
         </div>
-       <div class="section">
+
+
+        <!-- USER INPUT -->
+        <div class="section">
             <label>Tell us about your visit</label>
-<textarea
-    id="comments"
-    placeholder="Tell us about your visit. What made your experience memorable?">
-</textarea>            
-     </div>
+
+            <textarea
+                id="comments"
+                placeholder="Example: The staff was friendly and the appointment was quick and comfortable..."
+            ></textarea>
+        </div>
+
+
+        <!-- MAIN CTA -->
         <button class="btn" id="generateBtn">
-        ✨ Help Me Write My Review
+            ✨ Step 2: Improve My Review
         </button>
-        <div id="reviewContainer" class="section" style="display:none;">
 
-    <label>Suggested Review</label>
 
-    <textarea
-        id="generatedReview"
-        rows="8"
-        readonly
-    ></textarea>
+        <!-- OUTPUT -->
+        <div id="reviewContainer" style="display:none; margin-top:20px;">
 
-    <button class="btn" id="copyBtn">
-        📋 Copy Review
-    </button>
-<button class="btn" id="googleReviewBtn">
-    ⭐ Leave a Google Review
-</button>
-<p class="subtext">
-Thank you for supporting our practice! Your feedback helps other patients find quality dental care.
-</p>
-</div>
+            <label>Suggested Review</label>
+
+            <textarea
+                id="generatedReview"
+                rows="8"
+                readonly
+            ></textarea>
+
+            <!-- ACTIONS -->
+            <button class="btn" id="copyBtn">
+                📋 Step 3: Copy Review
+            </button>
+
+            <button class="btn" id="googleReviewBtn">
+                ⭐ Step 4: Leave Google Review
+            </button>
+
+            <p class="subtext">
+                After copying your review, click above to open Google Reviews and paste your response.
+                Thank you for supporting our practice.
+            </p>
+
+        </div>
+
     </div>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
