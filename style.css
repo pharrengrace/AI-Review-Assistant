@@ -225,3 +225,18 @@ textarea {
     font-size: 12px;
     font-weight: bold;
 }
+/* -----------------------------
+   HEADER IMAGE FIX
+----------------------------- */
+
+.header-image {
+    margin-bottom: 20px;
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+}
