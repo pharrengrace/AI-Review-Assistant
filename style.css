@@ -307,3 +307,15 @@ textarea {
     }
 
 }
+/* -----------------------------
+   COPY SUCCESS MESSAGE
+----------------------------- */
+
+.copy-message {
+    display: none;
+    margin-top: 12px;
+    text-align: center;
+    color: #2e7d32;
+    font-size: 14px;
+    font-weight: 600;
+}

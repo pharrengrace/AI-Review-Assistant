@@ -30,6 +30,7 @@ stars.forEach((star, index) => {
 
 
 
+
 // -----------------------------
 // GENERATE REVIEW + AI REQUEST
 // -----------------------------
@@ -39,6 +40,7 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
     const generateBtn = document.getElementById("generateBtn");
     const reviewContainer = document.getElementById("reviewContainer");
     const reviewBox = document.getElementById("generatedReview");
+    const copyMessage = document.getElementById("copyMessage");
 
 
     const service = document.getElementById("service").value;
@@ -55,12 +57,20 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
+    // Hide copy notification
+    if (copyMessage) {
+        copyMessage.style.display = "none";
+    }
+
+
+
     // Button loading state
     generateBtn.disabled = true;
     generateBtn.innerHTML = "⏳ Improving your review...";
 
 
-    // Show review area
+
+    // Show review section
     reviewContainer.style.display = "block";
 
     reviewBox.value =
@@ -68,9 +78,11 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
-    // Build review
+
+    // Create review draft
     let review =
         `I had a great experience at Simmons Family Dentistry during my ${service.toLowerCase()}. `;
+
 
 
     if (checked.length > 0) {
@@ -83,6 +95,7 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
     }
 
 
+
     if (comments.trim() !== "") {
 
         review += comments.trim() + " ";
@@ -90,14 +103,16 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
     }
 
 
+
     review +=
     "I would definitely recommend Simmons Family Dentistry to anyone looking for quality dental care!";
 
 
 
+
     try {
 
-        const res = await fetch("/api/google-reviews", {
+        const response = await fetch("/api/google-reviews", {
 
             method: "POST",
 
@@ -113,10 +128,10 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
-        const data = await res.json();
+        const data = await response.json();
 
 
-        console.log("AI response:", data);
+        console.log("AI Response:", data);
 
 
 
@@ -142,12 +157,13 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
-    // Fade animation
+
+    // Add animation
     reviewContainer.classList.add("fade-in");
 
 
 
-    // Restore button
+    // Reset button
     generateBtn.disabled = false;
 
     generateBtn.innerHTML =
@@ -159,37 +175,55 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
+
 // -----------------------------
 // COPY REVIEW
 // -----------------------------
 
-document.getElementById("copyBtn").addEventListener("click", () => {
+document.getElementById("copyBtn").addEventListener("click", async () => {
 
 
     const reviewBox = document.getElementById("generatedReview");
-
     const message = document.getElementById("copyMessage");
 
 
-    navigator.clipboard.writeText(reviewBox.value);
+
+    try {
+
+
+        await navigator.clipboard.writeText(reviewBox.value);
 
 
 
-    if (message) {
+        if (message) {
 
-        message.style.display = "block";
+            message.style.display = "block";
 
 
-        setTimeout(() => {
+            setTimeout(() => {
 
-            message.style.display = "none";
+                message.style.display = "none";
 
-        }, 3000);
+            }, 3000);
+
+        }
+
+
+
+    } catch (error) {
+
+
+        console.error("Copy Error:", error);
+
+
+        alert("Please manually select and copy your review.");
 
     }
 
 
+
 });
+
 
 
 
