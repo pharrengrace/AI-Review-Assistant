@@ -1,119 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simmons Family Dentistry - Leave a Review</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simmons Family Dentistry - Leave a Review</title>
 
-  <link rel="stylesheet" href="style.css?v=1000" />
+    <link rel="stylesheet" href="style.css?v=1001">
 </head>
 
 <body>
 
 <div class="container">
 
-  <div class="card">
+    <div class="card">
 
-    <div class="header-image">
-        <img src="/header.jpg" alt="Simmons Family Dentistry">
-</div>
+        <!-- Header Image -->
+        <div class="header-image">
+            <img src="/header.jpg" alt="Simmons Family Dentistry">
+        </div>
 
-    <!-- HEADER -->
-   <h1> Simmons Family Dentistry</h1>
+        <!-- Header -->
+        <h1>🦷 Simmons Family Dentistry</h1>
 
-<p class="welcome">
-    Thank you for choosing Simmons Family Dentistry!
-</p>
+        <p class="welcome">
+            Thank you for choosing Simmons Family Dentistry!
+        </p>
 
-<p class="subtext">
-    Share a few details about your visit below, and our AI will help you create a polished Google review that you can copy and post in just a few clicks.
-</p>
+        <p class="subtext">
+            Your feedback means a great deal to our team. Share a few details about your visit below, and our AI will help you create a polished Google review that you can copy and post in just a few clicks.
+        </p>
 
+        <!-- Google Badge -->
+        <div class="google-badge">
+            ⭐⭐⭐⭐⭐ Loved your visit? We'd love to hear your feedback.
+        </div>
 
-</div>
+        <!-- Rating -->
+        <div class="section">
 
-    <!-- RATING -->
-    <div class="section">
-      <label>Overall Rating</label>
+            <label>How would you rate your visit?</label>
 
-      <div class="stars" id="starRating">
-        <span data-value="1">☆</span>
-        <span data-value="2">☆</span>
-        <span data-value="3">☆</span>
-        <span data-value="4">☆</span>
-        <span data-value="5">☆</span>
-      </div>
+            <div class="stars" id="starRating">
+                <span data-value="1">☆</span>
+                <span data-value="2">☆</span>
+                <span data-value="3">☆</span>
+                <span data-value="4">☆</span>
+                <span data-value="5">☆</span>
+            </div>
+
+        </div>
+
+        <!-- Service -->
+        <div class="section">
+
+            <label>Which service did you receive today?</label>
+
+            <select id="service">
+                <option>Dental Cleaning</option>
+                <option>Dental Exam</option>
+                <option>Dental Filling</option>
+                <option>Teeth Whitening</option>
+                <option>Emergency Visit</option>
+                <option>New Patient Exam</option>
+                <option>Invisalign Consultation</option>
+                <option>Other</option>
+            </select>
+
+        </div>
+
+        <!-- Highlights -->
+        <div class="section">
+
+            <label>What stood out most during your visit?</label>
+
+            <div class="checkbox-group">
+
+                <label><input type="checkbox" value="Gentle care"> Gentle care</label>
+
+                <label><input type="checkbox" value="Friendly staff"> Friendly staff</label>
+
+                <label><input type="checkbox" value="Clean office"> Clean office</label>
+
+                <label><input type="checkbox" value="Professional team"> Professional team</label>
+
+                <label><input type="checkbox" value="Clear explanations"> Clear explanations</label>
+
+                <label><input type="checkbox" value="Comfortable atmosphere"> Comfortable atmosphere</label>
+
+                <label><input type="checkbox" value="Easy scheduling"> Easy scheduling</label>
+
+                <label><input type="checkbox" value="Short wait time"> Short wait time</label>
+
+                <label><input type="checkbox" value="Modern technology"> Modern technology</label>
+
+            </div>
+
+        </div>
+
+        <!-- Comments -->
+        <div class="section">
+
+            <label>Tell us about your experience</label>
+
+            <textarea
+                id="comments"
+                placeholder="Example: Everyone was welcoming, the office was beautiful, and Dr. Simmons explained everything clearly. I felt comfortable throughout my appointment."
+            ></textarea>
+
+        </div>
+
+        <!-- Generate Button -->
+        <button class="btn" id="generateBtn">
+            ✨ Generate My Review
+        </button>
+
+        <!-- Review Output -->
+        <div id="reviewContainer" style="display:none; margin-top:25px;">
+
+            <label>Your AI-Enhanced Review</label>
+
+            <textarea
+                id="generatedReview"
+                rows="8"
+                readonly
+            ></textarea>
+
+            <button class="btn" id="copyBtn">
+                📋 Copy Review
+            </button>
+
+            <button class="btn" id="googleReviewBtn">
+                ⭐ Post My Review on Google
+            </button>
+
+            <p class="review-note">
+                Your review is ready! Click <strong>Copy Review</strong>, then select <strong>Post My Review on Google</strong> to open Google Reviews and paste your review. Thank you for supporting Simmons Family Dentistry and helping other patients find quality dental care.
+            </p>
+
+        </div>
+
     </div>
-
-    <!-- SERVICE -->
-    <div class="section">
-      <label>What service did you receive?</label>
-
-      <select id="service">
-        <option>Dental Cleaning</option>
-        <option>Exam</option>
-        <option>Filling</option>
-        <option>Whitening</option>
-        <option>Emergency Visit</option>
-        <option>New Patient Exam</option>
-        <option>Invisalign Consultation</option>
-        <option>Other</option>
-      </select>
-    </div>
-
-    <!-- CHECKBOXES -->
-    <div class="section">
-      <label>How was your visit?</label>
-
-      <div class="checkbox-group">
-        <label><input type="checkbox" value="Gentle care"> Gentle care</label>
-        <label><input type="checkbox" value="Clean office"> Clean office</label>
-        <label><input type="checkbox" value="Clear explanations"> Clear explanations</label>
-        <label><input type="checkbox" value="Easy scheduling"> Easy scheduling</label>
-        <label><input type="checkbox" value="Comfortable atmosphere"> Comfortable atmosphere</label>
-        <label><input type="checkbox" value="Professional team"> Professional team</label>
-        <label><input type="checkbox" value="Short wait time"> Short wait time</label>
-      </div>
-    </div>
-
-    <!-- USER INPUT -->
-    <div class="section">
-      <label>Share Your Experience</label>
-
-      <textarea
-        id="comments"
-        placeholder="Example: The staff was friendly and my appointment was quick and comfortable..."
-      ></textarea>
-    </div>
-
-    <!-- MAIN BUTTON -->
-    <button class="btn" id="generateBtn">
-      ✨ Generate My Review
-    </button>
-
-    <!-- OUTPUT -->
-    <div id="reviewContainer" style="display:none; margin-top:20px;">
-
-      <label>Your AI-Enhanced Review</label>
-
-      <textarea id="generatedReview" rows="8" readonly></textarea>
-
-      <!-- ACTIONS -->
-      <button class="btn" id="copyBtn">
-        📋 Copy Review
-      </button>
-
-      <button class="btn" id="googleReviewBtn">
-        ⭐ Post My Review on Google
-      </button>
-
-    <p class="review-note">
-Your review is ready! Click <strong>Copy Review</strong>, then select <strong>Post My Review on Google</strong> to paste it into Google Reviews. Thank you for supporting Simmons Family Dentistry!
-    </p>
-
-    </div>
-
-  </div>
 
 </div>
 

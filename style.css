@@ -11,7 +11,7 @@
 
 
 /* -----------------------------
-   PAGE BACKGROUND (CLEAN CLINIC STYLE)
+   PAGE
 ----------------------------- */
 
 body {
@@ -20,23 +20,22 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 
 /* -----------------------------
-   MAIN CONTAINER CARD
+   MAIN CARD
 ----------------------------- */
 
 .card {
     background: #ffffff;
-    width: 540px;
+    width: 600px;
     max-width: 100%;
-    padding: 45px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-    text-align: left;
+    padding: 55px 50px;
+    border-radius: 14px;
     border: 1px solid #e6eef5;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
 
 
@@ -45,54 +44,80 @@ body {
 ----------------------------- */
 
 .header-image {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-radius: 12px;
     overflow: hidden;
 }
 
 .header-image img {
     width: 100%;
-    height: 180px;
+    height: 220px;
     object-fit: cover;
     display: block;
 }
 
 
 /* -----------------------------
-   HEADER STYLE (CENTERED + CLEAN)
+   HEADER
 ----------------------------- */
 
 h1 {
-    font-size: 24px;
+    font-size: 30px;
     color: #0b4a6f;
-    margin-bottom: 8px;
     font-weight: 700;
     text-align: center;
+    margin-bottom: 12px;
+}
+
+.welcome {
+    text-align: center;
+    color: #2b7bbb;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
 }
 
 .subtext {
-    font-size: 14px;
-    color: #5f6b76;
-    margin-bottom: 25px;
-    line-height: 1.6;
     text-align: center;
+    color: #5f6b76;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 470px;
+    margin: 0 auto 40px auto;
 }
 
 
 /* -----------------------------
-   SECTIONS
+   GOOGLE BADGE
+----------------------------- */
+
+.google-badge {
+    background: #f7fbff;
+    border: 1px solid #dbe8f4;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 35px 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+
+/* -----------------------------
+   FORM SECTIONS
 ----------------------------- */
 
 .section {
-    margin-bottom: 22px;
+    margin-bottom: 30px;
 }
 
 label {
     display: block;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: #2c3e50;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 
@@ -101,54 +126,53 @@ label {
 ----------------------------- */
 
 .stars {
-    font-size: 34px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    font-size: 40px;
     cursor: pointer;
 }
 
 .stars span {
-    margin-right: 6px;
-    color: #c9d6df;
-    transition: 0.2s ease;
+    color: #f4b400;
+    transition: all .2s ease;
+}
+
+.stars span:hover {
+    transform: scale(1.15);
 }
 
 .stars span.active {
     color: #f4b400;
 }
 
-.stars span:hover {
-    transform: scale(1.2);
-    color: #f4b400;
-}
-
 
 /* -----------------------------
-   INPUT FIELDS
+   INPUTS
 ----------------------------- */
 
 select,
 textarea {
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 10px;
     border: 1px solid #d9e2ec;
     font-size: 14px;
-    margin-top: 6px;
+    background: white;
     outline: none;
-    background: #fff;
+    transition: .2s;
 }
 
 select:focus,
 textarea:focus {
     border-color: #2b7bbb;
-    box-shadow: 0 0 0 3px rgba(43, 123, 187, 0.15);
+    box-shadow: 0 0 0 3px rgba(43,123,187,.15);
 }
 
-
-/* TEXTAREA */
-
 textarea {
-    height: 110px;
-    resize: none;
+    height: 140px;
+    resize: vertical;
+    line-height: 1.5;
 }
 
 
@@ -159,49 +183,106 @@ textarea {
 .checkbox-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 8px;
-    font-size: 13px;
+    gap: 12px;
+    font-size: 14px;
     color: #34495e;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+    font-weight: normal;
 }
 
 
 /* -----------------------------
-   BUTTON
+   BUTTONS
 ----------------------------- */
 
 .btn {
     width: 100%;
-    padding: 13px;
-    margin-top: 18px;
+    padding: 15px;
+    margin-top: 24px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #2b7bbb;
     color: white;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: .2s;
 }
 
 .btn:hover {
     background: #1f5f93;
+    transform: translateY(-1px);
 }
 
 
 /* -----------------------------
-   OUTPUT BOX
+   AI REVIEW OUTPUT
 ----------------------------- */
 
 #reviewContainer {
-    margin-top: 20px;
-    padding: 18px;
-    border-radius: 10px;
+    margin-top: 40px;
+    padding: 25px;
     background: #f9fbfd;
     border: 1px solid #e3ecf3;
+    border-radius: 12px;
 }
 
 #generatedReview {
-    background: #fff;
+    background: white;
     border: 1px solid #d9e2ec;
+}
+
+
+/* -----------------------------
+   REVIEW NOTE
+----------------------------- */
+
+.review-note {
+    margin-top: 24px;
+    text-align: center;
+    color: #5f6b76;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* -----------------------------
+   MOBILE
+----------------------------- */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 30px 25px;
+    }
+
+    .header-image img {
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .welcome {
+        font-size: 17px;
+    }
+
+    .subtext {
+        font-size: 14px;
+    }
+
+    .stars {
+        font-size: 34px;
+    }
 }
