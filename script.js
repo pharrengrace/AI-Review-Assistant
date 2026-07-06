@@ -57,20 +57,19 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
-    // Hide copy notification
+    // Hide copy message until user clicks copy
     if (copyMessage) {
         copyMessage.style.display = "none";
     }
 
 
 
-    // Button loading state
+    // Loading state
     generateBtn.disabled = true;
     generateBtn.innerHTML = "⏳ Improving your review...";
 
 
 
-    // Show review section
     reviewContainer.style.display = "block";
 
     reviewBox.value =
@@ -78,8 +77,8 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
+    // Build review
 
-    // Create review draft
     let review =
         `I had a great experience at Simmons Family Dentistry during my ${service.toLowerCase()}. `;
 
@@ -88,9 +87,9 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
     if (checked.length > 0) {
 
         review +=
-        "The " +
-        checked.join(", ").toLowerCase() +
-        " really stood out. ";
+            "The " +
+            checked.join(", ").toLowerCase() +
+            " really stood out. ";
 
     }
 
@@ -105,7 +104,7 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
     review +=
-    "I would definitely recommend Simmons Family Dentistry to anyone looking for quality dental care!";
+        "I would definitely recommend Simmons Family Dentistry to anyone looking for quality dental care!";
 
 
 
@@ -157,13 +156,20 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
+    // Restart animation cleanly
 
-    // Add animation
-    reviewContainer.classList.add("fade-in");
+    reviewContainer.classList.remove("fade-in");
+
+    setTimeout(() => {
+
+        reviewContainer.classList.add("fade-in");
+
+    }, 10);
 
 
 
     // Reset button
+
     generateBtn.disabled = false;
 
     generateBtn.innerHTML =
@@ -176,20 +182,18 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
+
 // -----------------------------
 // COPY REVIEW
 // -----------------------------
 
 document.getElementById("copyBtn").addEventListener("click", async () => {
 
-
     const reviewBox = document.getElementById("generatedReview");
     const message = document.getElementById("copyMessage");
 
 
-
     try {
-
 
         await navigator.clipboard.writeText(reviewBox.value);
 
@@ -212,17 +216,14 @@ document.getElementById("copyBtn").addEventListener("click", async () => {
 
     } catch (error) {
 
+        console.error("Copy failed:", error);
 
-        console.error("Copy Error:", error);
-
-
-        alert("Please manually select and copy your review.");
+        alert("Unable to copy review. Please select and copy manually.");
 
     }
 
-
-
 });
+
 
 
 
@@ -234,9 +235,7 @@ document.getElementById("copyBtn").addEventListener("click", async () => {
 
 document.getElementById("googleReviewBtn").addEventListener("click", () => {
 
-
     window.location.href =
         "https://search.google.com/local/writereview?placeid=ChIJDU7R8RMM3IARnMfbJzw6uZo";
-
 
 });
